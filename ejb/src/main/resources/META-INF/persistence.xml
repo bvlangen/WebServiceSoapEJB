@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+   xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation=" http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+   <persistence-unit name="primary">
+      <!-- The datasource is deployed as <EAR>/META-INF/CustomerService-ds.xml, you
+           can find it in the source at ear/src/main/application/META-INF/CustomerService-ds.xml -->
+       <jta-data-source>java:jboss/datasources/CustomerServiceDS</jta-data-source>
+       <class>com.bvlangen.soap.model.Customer</class>
+       <class>com.bvlangen.soap.model.Address</class>
+       <class>com.bvlangen.soap.model.Email</class>
+       <properties>
+           <!-- Properties for Hibernate, show SQL in console output -->
+           <property name="hibernate.show_sql" value="true" />
+       </properties>
+   </persistence-unit>
+
+</persistence>
